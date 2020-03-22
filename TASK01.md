@@ -5,7 +5,7 @@
 ##  1.1学习目标
 
 - 理解赛题数据和目标，清楚评分体系。
-    
+  
 - 完成相应报名，下载数据和结果提交打卡（可提交示例结果），熟悉比赛流程
 
 
@@ -59,7 +59,7 @@ print('TestA data shape:',Test_data.shape)
 
     Train data shape: (150000, 31)
     TestA data shape: (50000, 30)
-    
+
 
 
 ```python
@@ -79,7 +79,7 @@ Train_data.head()
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -301,7 +301,7 @@ Train_data.info()
      30  v_14               150000 non-null  float64
     dtypes: float64(20), int64(10), object(1)
     memory usage: 35.5+ MB
-    
+
 
 
 ```python
@@ -321,7 +321,7 @@ Train_data.describe()
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -567,7 +567,7 @@ MAE越小，说明模型预测得越准确。
 - 分类算法常见的评估指标如下：
 
 对于二类分类器/分类算法，评价指标主要有accuracy， [Precision，Recall，F-score，Pr曲线]，ROC-AUC曲线。
- 
+
 对于多类分类器/分类算法，评价指标主要有accuracy， [宏平均和微平均，F-score]。
 
 
@@ -589,7 +589,7 @@ print('AUC socre:',roc_auc_score(y_true, y_pred))
     Recall 0.6666666666666666
     F1-score: 0.8
     AUC socre: 0.8333333333333333
-    
+
 
 - 对于回归预测类常见的评估指标如下:
 
@@ -625,7 +625,7 @@ print('R2-score:',r2_score(y_true, y_pred))
     MAE: 0.4142857142857143
     MAPE: 0.1461904761904762
     R2-score: 0.957874251497006
-    
+
 
 ### 分析赛题
 
@@ -634,6 +634,8 @@ print('R2-score:',r2_score(y_true, y_pred))
 通过pandas、numpy、matplotlib、seabon等数据分析及挖掘手段找到有用的特征进行建模准备。
 
 应用sklearn中xgb、lgb、lr等回归框架来进行数据挖掘任务。
+
+另外补充，昨天在群里小伙伴分享的二手车行业背景知识（也就是对业务的理解）很受启发，觉得这方面对于预测很重要，结合本赛题可以从一下角度重点关注一下一些变量 bodyType 好车贵，fuelType，power，kilometer（负相关），notRepairedDamage，regDate-creatDate
 
 
 ### 经验总结
@@ -644,3 +646,4 @@ print('R2-score:',r2_score(y_true, y_pred))
 
 “我们至少就要有一些相应的理解分析，比如这题的难点可能在哪里，关键点可能在哪里，哪些地方可以挖掘更好的特征，用什么样得线下验证方式更为稳定，出现了过拟合或者其他问题，估摸可以用什么方法去解决这些问题，哪些数据是可靠的，哪些数据是需要精密的处理的，哪部分数据应该是关键数据”。
 
+赛题理解，一方面是理解相关背景知识及业务场景，另一方面还有对数据的理解。
